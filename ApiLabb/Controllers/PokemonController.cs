@@ -19,5 +19,13 @@ namespace ApiLabb.Controllers
         {
             return Ok(pokemons[0]); 
         }
+
+        [HttpPut]
+        public ActionResult Put(Pokemon pokemon)
+        {
+            pokemon.Add(pokemon);
+
+            return Ok(pokemons);
+        }
     }
 }
