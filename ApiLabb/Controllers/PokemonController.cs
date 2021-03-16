@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic; 
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiLabb.Controllers
@@ -7,10 +8,16 @@ namespace ApiLabb.Controllers
     [Route("api/pokemon")]
     public class PokemonController: ControllerBase
     {
+        List<Pokemon> pokemons = new List<Pokemon>() 
+        {
+            new Pokemon() {Name = "Pikachu"},
+            new Pokemon() {Name = "Snorlax"}
+        };
+
         [HttpGet]
         public ActionResult Get()
         {
-            return Ok("HEj"); 
+            return Ok(pokemons[0]); 
         }
     }
 }
